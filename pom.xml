@@ -14,22 +14,22 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <sonar.maven.plugin.version>4.0.0.4121</sonar.maven.plugin.version> <!-- Update SonarQube plugin version here -->
     </properties>
 
     <dependencies>
-             <dependency>
-                 <groupId>org.junit.jupiter</groupId>
-                 <artifactId>junit-jupiter-api</artifactId>
-                 <version>5.10.0</version>
-                 <scope>test</scope>
-             </dependency>
-             <dependency>
-                 <groupId>org.junit.jupiter</groupId>
-                 <artifactId>junit-jupiter-engine</artifactId>
-                 <version>5.10.0</version>
-                 <scope>test</scope>
-             </dependency>
-        <!-- You can add dependencies here -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.10.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.10.0</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -56,9 +56,13 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.0.4</version>
-            </plugin> 
+                <version>3.0.0-M5</version> <!-- Changed version -->
+            </plugin>
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>${sonar.maven.plugin.version}</version>
+            </plugin>
         </plugins>
     </build>
 </project>
-

@@ -1,21 +1,28 @@
-package com.example;
+package com.devopshint.StringPalindrome;
 
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
 
 public class AppTest {
 
-    @Test
-    public void testAdd() {
-        App app = new App();
-        int result = app.add(2, 3);
-        assertEquals(5, result, "2 + 3 should equal 5");
-    }
+	String input1 = "noon";
+	App app = new App();
+	boolean expected = true;
 
-    @Test
-    public void testMain() {
-        // You can add a simple test for main if needed
-        App.main(new String[]{});
-    }
+	@Test
+	public void isPlaindromeTest() {
+		assertEquals(expected, app.isPalindrome(input1));
+	}
+
+	@Test
+	public void isNotPlaindromeTest() {
+		assertEquals(false, app.isPalindrome("abc"));
+	}
+
+	@Test(expected = IllegalArgumentException.class)
+	public void isNotPlaindromeExceptionTest() {
+		assertEquals(false, app.isPalindrome(null));
+	}
+
 }
-
